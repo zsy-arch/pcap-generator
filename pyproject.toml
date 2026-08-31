@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pcap-generator"
+version = "0.1.0"
+description = "使用 Python 生成 PCAP 文件的工具，支持 TCP/UDP/ICMP/ARP/自定义字节/HTTP 数据包"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { file = "LICENSE" }
+dependencies = [
+    "scapy>=2.5.0",
+]
+
+[project.scripts]
+pcap-gen = "pcap_generator.cli:main"
+
+[tool.setuptools]
+packages = ["pcap_generator"]
